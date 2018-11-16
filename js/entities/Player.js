@@ -1,9 +1,5 @@
 class Player {
-    // méthode constructor
-    constructor(firstname, lastname, physics, cursors) {
-      this.firstname = firstname;
-      this.lastname = lastname;
-
+    constructor(physics, cursors) {
       this.cursors = cursors;
 
       this.player = physics.add.sprite(100, 450, 'dude');
@@ -11,18 +7,12 @@ class Player {
       this.player.setCollideWorldBounds(true);
 
     }
-  
-    sayName() {
-      return `${this.firstname} ${this.lastname}`;
-    }
-
     getPlayer(){
         return this.player;
     }
 
-    collectStar(player, star) {
-        console.log("collision avec une star");
-        star.disableBody(true, true);
+    create(){
+        console.log("create called");
     }
 
     update(){

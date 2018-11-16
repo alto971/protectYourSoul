@@ -1,5 +1,4 @@
 class Stars {
-    // méthode constructor
     constructor( physics) {
         this.stars = physics.add.group({
             key: 'star',

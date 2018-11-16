@@ -1,25 +1,8 @@
-let config = {
-    type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 300 },
-            debug: true
-        }
-    },
-    scene: {
-        preload: preload,
-        create: create,
-        update: update
-    }
-};
+
 //Phaser objects
 let platforms;
 let cursors;
 let player;
-let game = new Phaser.Game(config);
 
 //custom variables
 let ihmManager;
@@ -69,7 +52,7 @@ function create ()
     //static physics objects
     platforms = new Platforms(this.physics);
     //dynamic objects
-    player = new Player("John", "Doe",this.physics,cursors);
+    player = new Player(this.physics,cursors);
     stars = new Stars(this.physics);
     /********************* END static and dynamic objects *********************/
 
